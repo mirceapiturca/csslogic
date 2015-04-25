@@ -1,6 +1,6 @@
 CSSLogic tokenizer and parser
 =========
-Demo: <b>http://mirceapiturca.github.io/cssLogic//</b>
+Demo: <b>http://mirceapiturca.github.io/cssLogic/</b>
 
 ```javascript
 var string = ".foo {font-size: 2.1m}"
