@@ -10,8 +10,8 @@
 
 var Parser = function _Parser(aStream, aEntryPoint) {
 
-	this.i				= 0;
-	this.stream			= aStream;
+	this.i		= 0;
+	this.stream	= aStream;
 	
 	if (aEntryPoint === 'Parse a component value') {
 		
@@ -228,8 +228,8 @@ Parser.prototype = {
 
 		for (; this.i < il; this.i += 1) {
 
-			this.token		= aStream[this.i];
-			this.type		= this.token.type;
+			this.token	= aStream[this.i];
+			this.type	= this.token.type;
 			
 		//	console.log('consumeListOfRules', this.i, this.token, this.token.idx)
 			
@@ -267,7 +267,6 @@ Parser.prototype = {
 				
 				//	Reconsume the current input token. Consume an at-rule.
 				
-			//	this.reconsume(1);
 				atRule = this.consumeAtRule();
 				
 				if (atRule) {
@@ -281,9 +280,7 @@ Parser.prototype = {
 				//	Reconsume the current input token. Consume a qualified rule.
 				
 				this.reconsume(1);
-				
 				qualifiedRule = this.consumeQualifiedRule();
-			//	console.log('qualifiedRule', this.token, qualifiedRule)
 					
 				if (qualifiedRule) {
 						
@@ -394,7 +391,7 @@ Parser.prototype = {
 				//	Consume a simple block and assign it to the qualified rule's block. Return the qualified rule.
 				
 				qualifiedrule.start	= this.i + 1;
-				block				= this.consumeBlock();
+				block			= this.consumeBlock();
 				declarationsList	= this.consumeDeclarationsList(block.value);
 				qualifiedrule.value	= declarationsList;
 				qualifiedrule.end	= this.i - 1;
@@ -591,8 +588,8 @@ Parser.prototype = {
 	     *	http://dev.w3.org/csswg/css-syntax/#consume-a-list-of-declarations
 	     */
 		 
-		var i				= 0,
-			il				= aBlock.length,
+		var i			= 0,
+			il		= aBlock.length,
 			declarations	= [],
 			declaration,
 			temp,
@@ -625,7 +622,7 @@ Parser.prototype = {
 				
 				while (i < aBlock.length) {
 					
-					i		+= 1;
+					i	+= 1;
 					token	= aBlock[i];
 					type	= token.type;
 					
@@ -663,7 +660,7 @@ Parser.prototype = {
 
 				while (type !== 'SEMICOLON' && type !== 'EOF') {
 
-					i		+= 1;
+					i	+= 1;
 					token	= aBlock[i];
 					type	= token.type;
 										
@@ -702,12 +699,12 @@ Parser.prototype = {
 
 		var temp		= aBlock,
 			declaration	= {},
-			d			= 0,
+			d		= 0,
 			token,
 			type;
 
-		declaration.name		= temp[d];
-		declaration.value		= [];
+		declaration.name	= temp[d];
+		declaration.value	= [];
 		declaration.important	= false;
 
 		d += 1;
@@ -736,7 +733,7 @@ Parser.prototype = {
 
 			token	= temp[d];
 			type	= token.type;
-			d		+= 1;
+			d	+= 1;
 
 			declaration.value.push(token);
 		}
