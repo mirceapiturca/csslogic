@@ -139,7 +139,7 @@ Tokenizer.prototype = {
 		this.tokens.push({
 			type		: 'WHITESPACE',
 			value		: this.hasWhitespace,
-			idx			: this.idx,
+			idx		: this.idx,
 			line		: this.line,
 			codePoints	: this.hasWhitespace
 		});
@@ -156,8 +156,8 @@ Tokenizer.prototype = {
 		this.tokens.push({
 			type		: 'HASH',
 			value		: aValue,
-			id			: isId,
-			idx			: this.idx,
+			id		: isId,
+			idx		: this.idx,
 			line		: this.line,
 			codePoints	: this.codePoints
 		});
@@ -172,7 +172,7 @@ Tokenizer.prototype = {
 		this.tokens.push({
 			type		: aType,
 			value		: aValue,
-			idx			: this.idx,
+			idx		: this.idx,
 			line		: this.line,
 			codePoints	: this.codePoints
 		});
@@ -193,7 +193,7 @@ Tokenizer.prototype = {
 		this.tokens.push({
 			type		: aType,
 			value		: aValue,
-			idx			: this.idx,
+			idx		: this.idx,
 			line		: this.line,
 			codePoints	: []
 		});
@@ -341,7 +341,7 @@ Tokenizer.prototype = {
 
 		var whitespace	= [],
 			stream		= this.stream,
-			i			= this.i,
+			i		= this.i,
 			wscode		= stream.charCodeAt(i);
 
 	//	while (wscode == 32 || wscode == 9 || wscode == 13 || wscode == 10 || wscode == 12) {
