@@ -10,18 +10,18 @@
 var Tokenizer = function _Tokenizer(aStream, Options) {
 
 	this.stream =		aStream;
-	this.tokens			= [];
+	this.tokens		= [];
 	this.hasWhitespace	= [];
-	this.idx			= 0;
-	this.code			= 0;
+	this.idx		= 0;
+	this.code		= 0;
 	this.codePoints		= [];
 	
 	if (Options) {
 		
 		if (Options.mode === 'Parse Style Rule') {
 			
-			this.i				= Options.start;
-			this.line			= Options.line;
+			this.i			= Options.start;
+			this.line		= Options.line;
 			this.tokenizeRule	= true;
 		}
 		
@@ -124,7 +124,7 @@ Tokenizer.prototype = {
 		this.tokens.push({
 			type		: aType,
 			value		: aValue,
-			idx			: this.idx,
+			idx		: this.idx,
 			line		: this.line,
 			codePoints	: this.codePoints
 		});
