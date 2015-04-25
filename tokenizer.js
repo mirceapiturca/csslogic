@@ -32,7 +32,6 @@ var Tokenizer = function _Tokenizer(aStream, Options) {
 	}
 	
 	this.tokenize();
-
 	return this.tokens;
 }
 
@@ -87,7 +86,6 @@ Tokenizer.prototype = {
 		
 		//	A newline, U+0020 SPACE or  U+0009 CHARACTER TABULATION.
 		return this.isNewline(aCode) || aCode == 0x20 || aCode == 9; 
-	//	return aCode === 32 || aCode === 9 || aCode === 13 || aCode === 10 || aCode === 12;
 	},
 	
 	
@@ -131,7 +129,6 @@ Tokenizer.prototype = {
 			codePoints	: this.codePoints
 		});
 		
-	//	this.codePointsToString(this.codePoints);
 		this.idx += 1;
 		this.codePoints = [];
 	},
@@ -610,7 +607,6 @@ Tokenizer.prototype = {
 				badString.push(this.code)
 			}
 		}
-
 	},
 
 	
@@ -699,16 +695,13 @@ Tokenizer.prototype = {
 
 					//	Otherwise, if the next input character is a newline, consume it.
 					code.push(this.next(1));
-				//	this.i += 1;
 					this.consume(1);
-					
 
 				} else if (this.startsWithValidEscape(this.code, this.next(1))) {
 
 					//	Consume an escaped character and append the returned character to the <string>’s value.
 					this.consume(1);
 					string += this.consumeEscape();
-					
 				}
 
 			} else {
@@ -717,7 +710,6 @@ Tokenizer.prototype = {
 				string += String.fromCharCode(this.code);
 				code.push(this.code);
 			}
-
 		}
 
 		//	EOF, Return the <string>.
@@ -770,7 +762,6 @@ Tokenizer.prototype = {
 			
 			this.emitToken('NUMBER', number);
 		}
-
 	},
 	
 	
