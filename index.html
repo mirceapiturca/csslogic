@@ -9,29 +9,27 @@
 <body>
 <script type="text/javascript">
 
+        var params = {
+            // Specify your subscription key
+            'subscription-key': '62774c6138074598aadfff02cbdfa5a8',
+            // Specify values for optional parameters, as needed
+             visualFeatures: "All",
+        };
+         
+        $.ajax({
+            url: 'https://api.projectoxford.ai/vision/v1/analyses?' + $.param(params),
+            type: 'POST',
+            data: {'url': 'http://typefolly.com/how-old/img/5542974a4ac93.png'}
+        })
+        .done(function(data) {
+            alert("success");
+        })
+        .fail(function() {
+            alert("error");
+        });
 
 
-				var params = {
-					// Specify your subscription key
-					'subscription-key': '450cce3a23884702bfc3542100de161c',
-					// Specify values for optional parameters, as needed
-					 analyzesFaceLandmarks: "true",
-					// analyzesAge: "false",
-					// analyzesGender: "false",
-					// analyzesHeadPose: "false",
-				};
-				 
-				$.ajax({
-					url: 'https://api.projectoxford.ai/face/v0/detections?' + $.param(params),
-					type: 'POST',
-					data: {'url': 'http://typefolly.com/how-old/img/5542974a4ac93.png'}
-				})
-				.done(function(data) {
-					console.log("success", data);
-				})
-				.fail(function(data) {
-					console.log("error", data);
-				});
+
 </script>
 </body>
 </html>
