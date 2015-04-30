@@ -23,7 +23,7 @@
 				$.ajax({
 					url: 'https://api.projectoxford.ai/face/v0/detections?' + $.param(params),
 					type: 'POST',
-				//	data: {'url': 'http://typefolly.com/how-old/img/5542974a4ac93.png'}
+					data: {'url': 'http://typefolly.com/how-old/img/5542974a4ac93.png'}
 				})
 				.done(function(data) {
 					console.log("success", data);
